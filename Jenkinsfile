@@ -1,7 +1,4 @@
-node {
-    def rootDir = pwd()
-    def exampleModule = load "${rootDir}@script/Pipeline.groovy"
-    new Pipeline(this, "config.yml").execute()
-}
+@Library('jenkins-test') _
+import com.example.*
 
-
+new Pipeline(this, "config.yml").execute()
